@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #show {
+        width: 150px;
+        height: 80px;
+        background-color: bisque;
+        text-align: center;
+        color: brown;
+        font-size: larger;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      function fullName() {
+        let first = prompt("Enter first name", "");
+        let last = prompt("Enter last name", "");
+        let full = first + " " + last;
+
+        //alert("Your Full Name: " + full);
+        document.getElementById("show").innerHTML = full;
+      }
+
+      //function call
+    </script>
+    <button onclick="fullName()">Click here</button>
+    <div id="show"></div>
+  </body>
+</html>
