@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+      tr,
+      th,
+      td {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      //   let text = "";
+      //   let i = 1;
+
+      //   while (i < 10) {
+      //     text += "<br>" + i;
+      //     i++;
+      //   }
+      //   document.write(text);
+      const flowers = ["rose", "tulip", "belly", "waterlily"];
+      let i = 0;
+      let output = "<table>";
+      output += "<tr><th>SN</th><th>Name</th></tr>";
+      while (i < flowers.length) {
+        sn = i + 1;
+        output += "<tr><td>" + sn + "</td>";
+        output += "<td>" + flowers[i] + "</td></tr>";
+        i++;
+      }
+      output += "</table>";
+      document.write(output);
+    </script>
+  </body>
+</html>

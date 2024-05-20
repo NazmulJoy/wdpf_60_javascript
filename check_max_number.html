@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let input = prompt("Enter a value", "");
+      const numbers = input.split(",");
+      console.log(numbers);
+      let max = numbers[0];
+      max = parseInt(max);
+
+      for (let i = 1; i < numbers.length; i++) {
+        if (parseInt(numbers[i]) < max) {
+          max = numbers[i];
+        }
+      }
+      document.write(max);
+    </script>
+  </body>
+</html>
