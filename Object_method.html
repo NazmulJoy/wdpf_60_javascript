@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const product = {
+        name: "Samsung Galaxy S23",
+        price: 109000,
+        details: "8GB/256GB",
+        os: "Android",
+      };
+
+      console.log(product);
+
+      product.info = function () {
+        let text = "";
+        text += "Product Name:" + this.name + "<br>";
+        text += "Product Price:" + this.price + "<br>";
+        text += "Product Details:" + this.details + "<br>";
+        text += "Product OS:" + this.os + "<br>";
+
+        return text;
+      };
+      document.write(product.info());
+    </script>
+  </body>
+</html>
