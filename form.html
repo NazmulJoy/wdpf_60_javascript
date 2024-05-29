@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="dis"></div>
+    <form action="" name="myform">
+      <input type="text" name="email" placeholder="Enter your Email" /> <br />
+      <input
+        type="text"
+        name="Con_email"
+        placeholder="Confirm your Email"
+      /><br />
+      <input
+        type="password"
+        name="password"
+        placeholder="Enter your Password"
+      /><br />
+      <input type="button" onclick="validate()" name="submit" value="SUBMIT" />
+    </form>
+    <script>
+      function validate() {
+        //let fname = document.forms["myform"]["fname"].value;
+        let email1 = document.myform.email.value;
+        let email2 = document.myform.Con_email.value;
+        let pass = document.myform.password.value;
+        let pattern = /[A-z0-9]+@[A-z]+\.[A-z]{2,4}$/i;
+        let result = email1.search(pattern);
+        if (result == -1) {
+          alert("Not vaild");
+        } else if (email1 != email2) {
+          alert("Not matched");
+        } else if (pass.length < 7) {
+          alert("Not vaild");
+        } else {
+          alert("vaild");
+        }
+        // alert(fname);
+        // return false;
+        // document.getElementById("dis").innerHTML = full;
+      }
+    </script>
+  </body>
+</html>
