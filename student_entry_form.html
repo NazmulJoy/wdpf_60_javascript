@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form name="Student">
+      Student Id:
+      <input
+        type="text"
+        name="Student_Id"
+        placeholder="Enter your Student id"
+      />
+      <br />
+
+      Name:
+      <input type="text" name="Name" placeholder="Enter your name" /><br />
+
+      Course:
+      <input
+        type="text"
+        name="Course"
+        placeholder="Enter your course name"
+      /><br />
+
+      Year/section:
+      <input
+        type="text"
+        name="YearSection"
+        placeholder="Enter your Year/Section"
+      /><br />
+
+      <button type="button" onclick="myFunction()">Try it</button>
+    </form>
+
+    <script>
+      function myFunction() {
+        let output = document.Student.Student_Id.value;
+        let output1 = document.Student.Name.value;
+        let output2 = document.Student.Course.value;
+        let output3 = document.Student.YearSection.value;
+        if (output == "") {
+          alert("Student_ID must be filled");
+        } else if (output1 == "") {
+          alert("Name must be filled");
+        } else if (output2 == "") {
+          alert("Course must be filled");
+        } else if (output3 == "") {
+          alert("Yearsection must be filled");
+        } else {
+          var myWindow = window.open("", "MsgWindow", "width=600,height=500");
+          myWindow.document.write(
+            "Student_Id:" +
+              output +
+              "<br>" +
+              "Name:" +
+              output1 +
+              "<br>" +
+              "Course:" +
+              output2 +
+              "<br>" +
+              "Year/section:" +
+              output3
+          );
+        }
+      }
+    </script>
+  </body>
+</html>
