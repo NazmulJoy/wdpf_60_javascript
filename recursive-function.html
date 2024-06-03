@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function doit(n) {
+        if (n === 0) {
+          console.log("Task Completed");
+          return0;
+        }
+        console.log("Doing something");
+        doit(n - 1);
+      }
+      doit(3);
+    </script>
+  </body>
+</html>
