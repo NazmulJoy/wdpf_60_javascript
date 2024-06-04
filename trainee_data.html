@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form name="myform">
+      Name: <br />
+      <input type="text" name="name" placeholder="enter your name" /> <br />
+      Contact: <br />
+      <input type="text" name="contact" placeholder="enter your contact" />
+      <br />
+      Remarks: <br />
+      <textarea name="remarks" placeholder="enter remarks"></textarea> <br />
+      Sex: <br />
+      Male:<input type="radio" name="sex" value="male" /> Female:<input
+        type="radio"
+        name="sex"
+        value="female"
+      />
+      <br />
+      Courses: <br />
+      <input type="checkbox" class="course" value="NT" /> NT
+      <input type="checkbox" class="course" value="IAD" />IAD
+      <input type="checkbox" class="course" value="DDD" /> DDD
+      <input type="checkbox" class="course" value="ESAD" /> ESAD <br />
+      Location: <br />
+      <select name="location">
+        <option value="No-input">Select your course</option>
+        <option value="Banani">Banani</option>
+        <option value="Dhanmondi">Dhanmondi</option>
+        <option value="Mirpur">Mirpur</option>
+      </select>
+      <br />
+
+      <button type="button" onclick="form_data()">Submit</button>
+      <script>
+        function form_data() {
+          let name = document.myform.name.value;
+          let contact = document.myform.contact.value;
+          let remarks = document.myform.remarks.value;
+          let sex = document.myform.sex.value;
+          let location = document.myform.location.value;
+
+          let courses = document.getElementsByClassName("course");
+
+          let data = " ";
+          for (let i = 0; i < courses.length; i++) {
+            if (courses[i].checked) {
+              data += courses[i].value + ", ";
+            }
+          }
+          let output = "<h1>Trainee Data</h1>";
+          output += "Name:" + name + "<br>";
+          output += "contact:" + contact + "<br>";
+          output += "remarks:" + remarks + "<br>";
+          output += "sex:" + sex + "<br>";
+          output += "location:" + location + "<br>";
+          output += "courses:" + data + "<br>";
+          let mw = window.open("", "", "height=250,width=500");
+          mw.document.write(output);
+        }
+      </script>
+    </form>
+  </body>
+</html>
