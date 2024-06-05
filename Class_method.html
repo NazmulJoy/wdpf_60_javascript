@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>Student Information</h3>
+    <p id="demo"></p>
+    <script>
+      class Student {
+        constructor(name, id, phone) {
+          this.name = name;
+          this.id = id;
+          this.phone = phone;
+        }
+        info() {
+          let details = "";
+          details += "Name: " + this.name + "<br>";
+          details += "Id: " + this.id + "<br>";
+          details += "Phone: " + this.phone + "<br>";
+          return details;
+        }
+      }
+      const student1 = new Student("Sakib", "1282436", "0164856321");
+      const student2 = new Student("Maruf", "1282478", "0197452131");
+
+      document.getElementById("demo").innerHTML =
+        student1.info() + "<br>" + student2.info();
+    </script>
+  </body>
+</html>

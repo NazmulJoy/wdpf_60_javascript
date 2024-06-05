@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form name="myform">
+      Email: <input type="text" name="email" placeholder="Enter your email" />
+      <br />
+      Confirm-email:
+      <input type="text" name="con_email" placeholder="Confirm your email" />
+      <br />
+      Password:
+      <input
+        type="password"
+        name="password"
+        placeholder="Enter your password"
+      />
+      <br />
+    </form>
+    <script>
+      const email_check = () => {
+        let Email = document.myform.email.value;
+        let Con_email = document.myform.con_email.value;
+        let Password = document.myform.password.value;
+        let pattern = /[A-z0-9]+@[A-z]+\.[A-z]{2,4}$/i;
+        let result = Email.search(pattern);
+
+        if (result == -1) {
+          alert("Email is not valid");
+        } else if (Email != Con_email) {
+          alert("Email not matched");
+        } else if (Password.length < 8) {
+          alert("Password must be at least 8 characters");
+        } else {
+          alert("valid");
+        }
+      };
+    </script>
+    <button type="button" onclick="email_check()">Check</button>
+  </body>
+</html>
