@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <title>Swap Simple</title>
+    <script>
+      function switch2() {
+        document.sample.src = "Image/images.jpg";
+      }
+      function switch1() {
+        document.sample.src = "Image/BCB-logo.jpg";
+      }
+    </script>
+    <a href="#" onMouseOver="switch2( )" onMouseOut="switch1( )">
+      <img
+        name="sample"
+        src="Image/images.jpg"
+        border="0"
+        height="250"
+        width="400"
+    /></a>
+  </body>
+</html>
