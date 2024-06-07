@@ -16,14 +16,21 @@
   </head>
   <body>
     <script>
-      const words = ["Apple", "Ball" "Cat", "Dog", "Egg", "Facebook", "GitHub"];
+      const words = [
+        "Apple",
+        "Ball",
+        "Cat",
+        "Dog",
+        "Egg",
+        "Facebook",
+        "GitHub",
+      ];
 
-      let output = "<table>"
-         output += "<tr><th>SN</th><th>Name</th></tr>"
+      let output = "<table>";
+      output += "<tr><th>SN</th><th>Name</th></tr>";
 
-      document.write("<table>");
       for (let i = 0; i < words.length; i++) {
-        sn = i+1;
+        sn = i + 1;
         output += "<tr><td>" + sn + "</td>" + "<td>" + words[i] + "</td></tr>";
       }
       output += "</table";
