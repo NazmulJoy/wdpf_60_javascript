@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="show"></div>
+    <form action="thank_you.html" name="myform" onsubmit="return myFunction()">
+      <b>Name:</b>
+      <input type="text" name="fname" placeholder="Enter first name" />
+      <input type="text" name="lname" placeholder="Enter last name" /><br />
+      <br />
+      <b>Company:</b>
+      <input type="text" name="company" placeholder="Company details" /><br />
+      <br />
+      <b>Email:</b>
+      <input type="text" name="email" placeholder="Example@mail.com" /><br />
+      <br />
+      <b>Phone:</b>
+      <input type="text" name="phone" placeholder="Enter your number" /><br />
+      <br />
+      <b>Subject:</b>
+      <select name="subject" id="">
+        <option value="">Choose opition</option></select
+      ><br />
+      <br />
+      <b>Are you an existing customer?</b> <br />
+      <input type="radio" name="answer" id="" /> Yes
+      <input type="radio" name="answer" id="" /> No <br />
+      <br />
+      <button type="submit">Register</button>
+    </form>
+    <script>
+      function myFunction() {
+        let output = document.myform.fname.value;
+        let output0 = document.myform.lname.value;
+        let output1 = document.myform.company.value;
+        let output2 = document.myform.email.value;
+        let output3 = document.myform.phone.value;
+        let pattern = /[A-z0-9]+@[A-z]+\.[A-z]{2,4}$/i;
+        let result = output2.search(pattern);
+        const errors = [];
+        if (output == "") {
+          errors[errors.length] = "First name cant be empty";
+        }
+        if (output0 == "") {
+          errors[errors.length] = "Last name cant be empty";
+        }
+        if (output1 == "") {
+          errors[errors.length] = "Company cant be empty";
+        }
+        if (output2 == "") {
+          errors[errors.length] = "Email cant be empty";
+        } else if (result == -1) {
+          errors[errors.length] = "Email isnt a valid email address";
+        }
+        if (output3 == "") {
+          errors[errors.length] = "Phone cant be empty";
+        }
+        if (errors.length > 0) {
+          let Erroroutput = "<ul>";
+          for (let i = 0; i < errors.length; i++) {
+            Erroroutput += "<li>" + errors[i] + "</li>";
+          }
+          Erroroutput += "</ul>";
+          document.getElementById("show").innerHTML = Erroroutput;
+          return false;
+        } else {
+          //document.getElementById("show").innerHTML = "";
+          return true;
+        }
+      }
+    </script>
+  </body>
+</html>
