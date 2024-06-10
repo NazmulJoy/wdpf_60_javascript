@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="Validation2.js"></script>
+  </head>
+  <body>
+    <script>
+      function check() {
+        let m = prompt("Enter a email address");
+        let pattern2 = /[0-9]/;
+        if (m.search(pattern2) == 0) {
+          document.write("number isn't allowed");
+        } else if (m == "") {
+          document.write("No input");
+        } else {
+          let checkjob = new Validation(m);
+          checkjob.validate();
+        }
+      }
+    </script>
+    <input type="button" name="Submit" value="SUBMIT" onclick="check()" />
+  </body>
+</html>
