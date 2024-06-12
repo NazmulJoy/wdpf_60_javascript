@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="Validation3.js"></script>
+  </head>
+  <body>
+    <form name="myform">
+      <b>Email:</b>
+      <input type="text" name="email" placeholder="Enter your email address" />
+      <br />
+      <b>Password:</b>
+      <input type="text" name="password" placeholder="Enter your password" />
+      <br />
+      <input type="button" name="Login" value="SUBMIT" onclick="check()" />
+    </form>
+    <script>
+      function check() {
+        let email = document.myform.email.value;
+        let pass = document.myform.password.value;
+        if (pass == "") {
+          alert("Password field is required");
+        } else if (pass.length < 6) {
+          alert("Password must be atleast 6 character long");
+        } else if (email == "") {
+          alert("Email field is required");
+        } else {
+          let lastcheck = new Validation(email);
+          lastcheck.validate();
+        }
+      }
+    </script>
+  </body>
+</html>
