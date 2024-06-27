@@ -36,11 +36,32 @@
         <option value="Mirpur">Mirpur</option>
       </select>
       <br />
-      <button type="button" onclick="info()">Submit</button>
+      <button type="button" onclick="light()">Submit</button>
     </form>
-
     <script>
-      function info() {
+      class formData {
+        constructor(name, contact, remarks, sex, course, location) {
+          this.name = name;
+          this.contact = contact;
+          this.remarks = remarks;
+          this.sex = sex;
+          this.data = course;
+          this.location = location;
+        }
+        getData() {
+          let output = "<h1>Trainee Information</h1>";
+          output += "Name: " + this.name + "<br>";
+          output += "Contact: " + this.contact + "<br>";
+          output += "Remarks: " + this.remarks + "<br>";
+          output += "Sex: " + this.sex + "<br>";
+          output += "Location: " + this.location + "<br>";
+          output += "Courses: " + this.data + "<br>";
+
+          let mw = window.open("", "", "height=250,width=400");
+          mw.document.write(output);
+        }
+      }
+      function light() {
         let name = document.myform.name.value;
         let contact = document.myform.contact.value;
         let remarks = document.myform.remarks.value;
@@ -48,7 +69,6 @@
         let location = document.myform.location.value;
 
         let course = document.getElementsByClassName("course");
-
         let data = "";
 
         for (let i = 0; i < course.length; i++) {
@@ -57,16 +77,8 @@
           }
         }
 
-        let output = "<h1>Trainee Information</h1>";
-        output += "Name: " + name + "<br>";
-        output += "Contact: " + contact + "<br>";
-        output += "Remarks: " + remarks + "<br>";
-        output += "Sex: " + sex + "<br>";
-        output += "Location: " + location + "<br>";
-        output += "Courses: " + data + "<br>";
-
-        let mw = window.open("", "", "height=250,width=400");
-        mw.document.write(output);
+        let obj = new formData(name, contact, remarks, sex, data, location);
+        obj.getData();
       }
     </script>
   </body>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form name="myform">
+      <input type="text" name="email" placeholder="Enter your email" />
+      <input type="button" name="submit" value="SUBMIT" onclick="checkMail()" />
+    </form>
+    <script>
+      class Validation {
+        constructor(email) {
+          this.email = email;
+        }
+        validate() {
+          var pattern = /[A-z0-9._]+@[A-z0-9]+\.[A-z]{2,4}$/i;
+          if (this.email.search(pattern) == -1) {
+            return false;
+          } else {
+            return true;
+          }
+        }
+      }
+
+      function checkMail() {
+        let m = document.myform.email.value;
+        let Checkobj1 = new Validation(m);
+        if (m == "") {
+          alert("Can't find your email");
+        } else if (Checkobj1.validate()) {
+          alert("valid email Address");
+        } else {
+          alert("Please enter a valid email address");
+        }
+      }
+    </script>
+  </body>
+</html>
