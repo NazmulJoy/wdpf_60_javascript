@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login form</title>
+  </head>
+  <body>
+    <form name="myform">
+      UserEmail:
+      <input type="text" name="email" placeholder="Enter your email" /><br />
+      UserPassword:
+      <input
+        type="password"
+        name="password"
+        placeholder="Enter your password"
+      /><br />
+      <button type="button" value="Submit">SUBMIT</button>
+    </form>
+    <script>
+      class loginform {
+        constructor(email, password) {
+          this.email = email;
+          this.password = password;
+        }
+        checkdata() {
+          var pattern = /[A-z0-9._]+@[A-z0-9]+\.[A-z]{2,4}$/i;
+          if (this.email.search(pattern) == -1) {
+            alert("Please enter a valid email address");
+          } else if (this.password < 8) {
+            alert("Password must be 8 character");
+          } else {
+            alert("valid email Address");
+          }
+        }
+      }
+      function Cdata() {
+        let email = document.myform.email.value;
+        let password = document.myform.password.value;
+        if (m == "") {
+          alert("Can't find your email");
+        } else {
+          let checkjob = loginform(email);
+          checkjob.checkdata();
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student form</title>
+  </head>
+  <body>
+    <form name="myform">
+      Name: <input type="text" name="name" placeholder="Enter your name" />
+      <br />
+      Roll: <input type="text" name="roll" placeholder="Enter your Roll" />
+      <br />
+      Remarks: <textarea name="remarks" id=""></textarea><br />
+      Gender: <input type="radio" name="gender" value="male" /> Male
+      <input type="radio" name="gender" value="female" /> Female <br />
+      Location:
+      <select name="location">
+        <option value="No-input">Select your location</option>
+        <option value="Banani">Banani</option>
+        <option value="Uttara">Uttara</option>
+        <option value="Nikunjo">Nikunjo</option>
+      </select>
+      <br />
+      Courses: <input type="checkbox" class="courses" value="JAVA" /> JAVA
+      <input type="checkbox" class="courses" value="PHP" /> PHP
+      <input type="checkbox" class="courses" value="REACT" /> REACT
+      <input type="checkbox" class="courses" value="PYTHON" /> PYTHON <br />
+      <button type="button" onclick="formData()" value="SUBMIT">SUBMIT</button>
+    </form>
+    <script>
+      class formoutput {
+        constructor(name, roll, remarks, gender, location, courses) {
+          this.name = name;
+          this.roll = roll;
+          this.remarks = remarks;
+          this.gender = gender;
+          this.location = location;
+          this.data = courses;
+        }
+        getdata() {
+          let output = "<h1>FormData</h1>";
+          output += "Name: " + this.name + "<br>";
+          output += "Roll: " + this.roll + "<br>";
+          output += "Remarks: " + this.remarks + "<br>";
+          output += "Gender: " + this.gender + "<br>";
+          output += "Location: " + this.location + "<br>";
+          output += "Courses: " + this.data + "<br>";
+          let mw = window.open("", "", "height = 250,width = 400");
+          mw.document.write(output);
+        }
+      }
+      function formData() {
+        let name = document.myform.name.value;
+        let roll = document.myform.roll.value;
+        let remarks = document.myform.remarks.value;
+        let gender = document.myform.gender.value;
+        let location = document.myform.location.value;
+        let courses = document.getElementsByClassName("courses");
+        let data = "";
+        for (i = 0; i < courses.length; i++) {
+          if (courses[i].checked) {
+            data += courses[i].value + ", ";
+          }
+        }
+        let result = new formoutput(
+          name,
+          roll,
+          remarks,
+          gender,
+          data,
+          location
+        );
+        result.getdata();
+      }
+    </script>
+  </body>
+</html>
