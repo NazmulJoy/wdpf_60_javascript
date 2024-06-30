@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Answer no 1</title>
+  </head>
+  <body>
+    <div id="check"></div>
+    <script>
+      function passfail() {
+        let mcq = prompt("Enter your marks", "");
+        let descriptive = prompt("Enter your marks", "");
+        let evidence = prompt("Enter your marks", "");
+        if (mcq >= 80 && descriptive >= 60 && evidence >= 60) {
+          document.getElementById("check").innerHTML = "You have passed";
+        } else {
+          document.getElementById("check").innerHTML = "You have failed";
+        }
+      }
+    </script>
+    <button type="button" onclick="passfail()">Check</button>
+  </body>
+</html>

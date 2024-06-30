@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Answer no 2</title>
+  </head>
+  <body>
+    <form name="myform">
+      Username:
+      <input type="text" name="name" placeholder="Enter your username" /> <br />
+      Password:
+      <input
+        type="password"
+        name="password"
+        placeholder="Enter your password"
+      />
+      <br />
+      <button type="button" onclick="logincheck()">Login</button>
+    </form>
+    <script>
+      class loginform {
+        constructor(username, password) {
+          this.username = username;
+          this.password = password;
+        }
+        getdata() {
+          if (this.password === "") {
+            alert("Password must be filled");
+          } else if (this.password.length < 8) {
+            alert("Password must be at least 8 characters");
+          } else {
+            document.write("Successful login");
+          }
+        }
+      }
+      function logincheck() {
+        let username = document.myform.name.value;
+        let password = document.myform.password.value;
+        if (username === "") {
+          alert("Username must be filled");
+        } else if (username.length < 6) {
+          alert("Username must be at least 6 characters");
+        } else {
+          let data = new loginform(username, password);
+          data.getdata();
+        }
+      }
+    </script>
+  </body>
+</html>

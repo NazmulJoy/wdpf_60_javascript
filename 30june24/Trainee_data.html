@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Answer no 3</title>
+  </head>
+  <body>
+    <form name="myform">
+      Name: <input type="text" name="name" placeholder="Enter your name" />
+      <br />
+      Address:
+      <textarea name="address" placeholder="Enter your address"></textarea>
+      <br />
+      Sex: <input type="radio" name="sex" value="male" /> Male
+      <input type="radio" name="sex" value="female" /> female <br />
+      Programming: <input type="checkbox" class="programming" value="PHP" /> PHP
+      <input type="checkbox" class="programming" value="Javascript" />
+      Javascript
+      <input type="checkbox" class="programming" value="Python" /> Python
+      <input type="checkbox" class="programming" value="Oracle" /> Oracle <br />
+      Location:
+      <select name="location" id="">
+        <option value="No-input">Select your area</option>
+        <option value="Banani">Banani</option>
+        <option value="Dhanmondi">Dhanmondi</option>
+        <option value="Mirpur">Mirpur</option>
+      </select>
+      <br />
+      <button type="button" onclick="check()">Submit</button>
+    </form>
+    <script>
+      class traineedata {
+        constructor(name, address, sex, programming, location) {
+          this.name = name;
+          this.address = address;
+          this.sex = sex;
+          this.location = location;
+          this.data = programming;
+        }
+        getdata() {
+          let output = "<h1>Traineedata</h1>";
+          output += "Name: " + this.name + "<br>";
+          output += "Address: " + this.address + "<br>";
+          output += "Sex: " + this.sex + "<br>";
+          output += "Location: " + this.location + "<br>";
+          output += "Programming: " + this.data + "<br>";
+          let no = window.open("", "", "height=250,width=400");
+          no.document.write(output);
+        }
+      }
+      function check() {
+        let name = document.myform.name.value;
+        let address = document.myform.address.value;
+        let sex = document.myform.sex.value;
+        let location = document.myform.location.value;
+
+        let programming = document.getElementsByClassName("programming");
+        let data = "";
+        for (i = 0; i < programming.length; i++) {
+          if (programming[i].checked) {
+            data += programming[i].value + ", ";
+          }
+        }
+        let mw = new traineedata(name, address, sex, data, location);
+        mw.getdata();
+      }
+    </script>
+  </body>
+</html>
